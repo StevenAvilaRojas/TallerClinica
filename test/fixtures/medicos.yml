@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombres: MyString
+  apellidos: MyString
+  num_id: 1
+  num_cel: 1
+  tipo_medico: MyString
+
+two:
+  nombres: MyString
+  apellidos: MyString
+  num_id: 1
+  num_cel: 1
+  tipo_medico: MyString

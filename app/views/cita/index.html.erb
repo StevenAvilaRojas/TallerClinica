@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cita</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombres Medico</th>
+      <th>Apellidos Medico</th>
+      <th>Nombres Paciente</th>
+      <th>Apellidos Paciente</th>
+      <th>Nombre consultorio</th>
+      <th>Codigo consultorio</th>
+      <th>Ubicacion consultorio</th>
+      <th>Fecha</th>
+      <th>Hora inicio</th>
+      <th>Hora fin</th>
+      <th>Motivo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cita.each do |citum| %>
+      <tr>
+        <td><%= @medico.find(citum.medico_id)[:nombres] %></td>
+        <td><%= @medico.find(citum.medico_id)[:apellidos] %></td>
+        <td><%= @paciente.find(citum.paciente_id)[:nombres] %></td>
+        <td><%= @paciente.find(citum.paciente_id)[:apellidos] %></td>
+        <td><%= @consultorio.find(citum.consultorio_id)[:nombre] %></td>
+        <td><%= @consultorio.find(citum.consultorio_id)[:codigo] %></td>
+        <td><%= @consultorio.find(citum.consultorio_id)[:ubicacion] %></td>
+        <td><%= citum.fecha %></td>
+        <td><%= citum.hora_inicio %></td>
+        <td><%= citum.hora_fin %></td>
+        <td><%= citum.motivo %></td>
+        <td><%= link_to 'Show', citum %></td>
+        <td><%= link_to 'Edit', edit_citum_path(citum) %></td>
+        <td><%= link_to 'Destroy', citum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Citum', new_citum_path %>
